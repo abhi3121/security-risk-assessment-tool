@@ -1,0 +1,6 @@
+tc_id,level,ac_refs,req_refs,nfr_refs,lld_refs,framework,location,targets,status
+TC-1,unit,AC-1,REQ-1,,LLD-3,<framework>,path/to/test/file.ext::TC_1_name,amd64-release,red
+TC-2,integration,AC-2,REQ-2,,LLD-2,<framework>,path/to/test/file.ext::TC_2_name,amd64-release;arm64-release,red
+TC-3,performance,AC-2,,NFR-1,LLD-3,<framework>,path/to/bench.ext::TC_3_name,amd64-release,red
+TC-4,security,AC-?,,NFR-2,LLD-3,<framework>,path/to/test/file.ext::TC_4_name,amd64-release,red
+TC-5,manual,AC-?,REQ-?,,,-,manual-checklist,,manual

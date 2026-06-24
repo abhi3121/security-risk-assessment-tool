@@ -1,0 +1,45 @@
+{
+  "feature_key": "FEATURE-KEY",
+  "workspace_path": ".specs/FEATURE-KEY",
+  "title": "<one-line feature title>",
+  "stage": "inputs-ready",
+  "stages": {
+    "init":      { "done": false, "at": null },
+    "design":    { "done": false, "at": null,
+                   "gates": { "lld_complete": false,
+                              "acceptance_covers_all_reqs": false,
+                              "plan_ordered_and_sized": false,
+                              "risks_registered": false } },
+    "tests":     { "done": false, "at": null,
+                   "gates": { "red_state_confirmed": false,
+                              "red_state_notes": "" } },
+    "implement": { "done": false, "at": null,
+                   "gates": { "green_state_confirmed": false } },
+    "lint":      { "done": false, "at": null, "pass": false,
+                   "errors": 0, "warnings": 0, "infos": 0,
+                   "report": null }
+  },
+  "counters": {
+    "REQ":  0, "NFR":  0, "AC":   0, "LLD":  0,
+    "TASK": 0, "TC":   0, "RISK": 0, "Q":    0
+  },
+  "open_clarifications": 0,
+  "open_risks": 0,
+  "toolchain": {
+    "build_system": null,
+    "test_framework": null,
+    "build_command": null,
+    "test_command": null,
+    "targets": [],
+    "languages": []
+  },
+  "host_integrations": {
+    "knowledge_base": null,
+    "formal_docs_root": null,
+    "ticketing_mcp": null,
+    "agent_rules_files": []
+  },
+  "artifacts": [],
+  "generator": "skill-spec-driven-dev@0.1.0",
+  "generated_at": null
+}

@@ -1,0 +1,7 @@
+tc_id,level,ac_refs,req_refs,nfr_refs,lld_refs,framework,location,targets,status
+TC-1,unit,AC-1,REQ-1,,LLD-1,vitest,tests/hello.test.ts::TC_1_hello_happy,node20,green
+TC-2,integration,AC-2,REQ-2,,LLD-2,vitest,tests/hello.test.ts::TC_2_usage_error,node20,green
+TC-3,unit,AC-3,REQ-1,,LLD-1,vitest,tests/hello.test.ts::TC_3_whitespace_name,node20,green
+TC-4,unit,AC-4,REQ-1,,LLD-1,vitest,tests/hello.test.ts::TC_4_long_name,node20,green
+TC-5,performance,AC-5,,NFR-1,LLD-1,vitest-bench,tests/hello.bench.ts::TC_5_perf,node20,green
+TC-6,unit,AC-6,REQ-1,,LLD-1,vitest,tests/hello.test.ts::TC_6_unicode_name,node20,green

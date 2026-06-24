@@ -1,0 +1,71 @@
+feature_key: hello-feature
+title: "Add hello(name) CLI command"
+summary: >
+  A tiny `hello` subcommand that greets the user. Example feature used to
+  illustrate the skill-spec-driven-dev skill artifact shapes.
+
+jira:
+  key: ~
+  url: ~
+  fetched_at: ~
+
+inputs:
+  pm_requirements:
+    path: 00-inputs/pm-requirements.md
+    present: true
+    confidence: high
+  hld:
+    path: ~
+    present: false
+    confidence: low
+  jira:
+    path: ~
+    present: false
+    confidence: low
+  architecture_docs:
+    paths: []
+    present: false
+    confidence: low
+  extra: []
+
+host_context:
+  knowledge_base: ~
+  formal_docs_root: ~
+  ticketing_mcp: ~
+  build_system: "npm"
+  test_framework: "vitest"
+
+target_modules: ["src/cli"]
+target_build_targets: ["node20"]
+
+requirements:
+  - id: REQ-1
+    source: 00-inputs/pm-requirements.md#requirements
+    statement: "The CLI shall print 'Hello, <name>!' when invoked as 'hello <name>'."
+    category: functional
+    derived: false
+    notes: ~
+
+  - id: REQ-2
+    source: 00-inputs/pm-requirements.md#error-handling
+    statement: "When invoked without a name, the CLI shall print 'usage: hello <name>' and exit with status 2."
+    category: functional
+    derived: false
+    notes: ~
+
+non_functional_requirements:
+  - id: NFR-1
+    source: 00-inputs/pm-requirements.md#performance
+    statement: "The hello function shall complete in under 10 ms for any name up to 1024 characters."
+    category: performance
+    derived: false
+    threshold: "<10 ms, names ≤ 1024 chars"
+    notes: ~
+
+missing_inputs: []
+open_questions: ["Q-1"]
+
+changelog:
+  - date: 2026-05-06
+    by: "skill-spec-driven-dev@0.1.0"
+    change: "initial manifest"

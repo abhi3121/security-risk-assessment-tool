@@ -1,0 +1,110 @@
+# Feature inputs manifest — template
+# Produced by the `init` capability.
+# Every REQ-n / NFR-n defined here is a first-class citizen downstream
+# (acceptance criteria, tests, and traceability all reference these ids).
+
+feature_key: FEATURE-KEY           # e.g. LUNA-1234 or multi-part-envelope-import
+title: "<one-line feature title>"
+summary: >
+  2–3 sentences describing what this feature is and why it exists.
+
+# ---------- Source references -----------------------------------------------
+# Where the information below comes from. Use file paths, URLs, or mcp refs.
+
+jira:
+  key: ~                           # e.g. LUNA-1234, or ~ if none
+  url: ~
+  fetched_at: ~                    # YYYY-MM-DD or ~
+
+inputs:
+  pm_requirements:
+    path: 00-inputs/pm-requirements.md
+    present: false
+    confidence: medium             # high | medium | low
+  hld:
+    path: 00-inputs/hld.md
+    present: false
+    confidence: medium
+  jira:
+    path: 00-inputs/jira.md
+    present: false
+    confidence: high
+  architecture_docs:
+    paths: []                      # list of file paths / URLs
+    present: false
+    confidence: medium
+  extra: []                        # list of { path, present, confidence } for extra docs
+
+# ---------- Host-repo context snapshot (summary; full details in
+# context-manifest.md) -------------------------------------------------------
+
+host_context:
+  knowledge_base: ~                # e.g. ".wiki" or null
+  formal_docs_root: ~              # e.g. "docs" or "firmware_vob/SOURCE/..."
+  ticketing_mcp: ~                 # e.g. "jira" or null
+  build_system: ~                  # cmake | npm | pip | cargo | go | maven | ...
+  test_framework: ~                # gtest+ctest | pytest | jest | junit5 | ...
+
+# ---------- Scope -----------------------------------------------------------
+
+target_modules: []                 # e.g. [CRY_MOD, KEY_MOD] — free-form strings
+target_build_targets: []           # e.g. [amd64-release, arm64-release]
+
+# ---------- UI development inputs (only filled when applicable=true) --------
+# Populated by the `init` capability step 4a. If the feature has no UI scope,
+# leave applicable=false and the empty lists; downstream capabilities will
+# skip UI-specific behaviour.
+
+ui_inputs:
+  applicable: false                # set true if the feature involves UI work
+  prototypes: []                   # list of:
+                                   #   - url: "https://..."
+                                   #     description: "..."
+                                   #     captured_at: YYYY-MM-DD
+                                   #     notes: ~
+  figma_specs: []                  # list of:
+                                   #   - url: "https://www.figma.com/file/..."
+                                   #     frame: "Login screen"
+                                   #     frame_url: "https://www.figma.com/file/.../?node-id=..."
+                                   #     description: "..."
+                                   #     captured_at: YYYY-MM-DD
+  screenshots: []                  # list of:
+                                   #   - path: "00-inputs/screenshots/login.png"   # local copy preferred
+                                   #     url:  ~                                    # OR url-only if remote-only
+                                   #     description: "..."
+                                   #     captured_at: YYYY-MM-DD
+  notes: ~                         # free-form (e.g. design-system, brand guidelines link)
+
+# ---------- Requirements ----------------------------------------------------
+
+# Functional requirements — one entry per REQ-n
+requirements:
+  - id: REQ-1
+    source: jira:LUNA-1234#description
+    statement: "<verbatim or lightly-normalised requirement statement>"
+    category: functional
+    derived: false                  # true if paraphrased/inferred
+    notes: ~
+
+# Non-functional requirements — one entry per NFR-n
+non_functional_requirements:
+  - id: NFR-1
+    source: 00-inputs/pm-requirements.md#performance
+    statement: "<e.g. 'Keygen completes in <50 ms on amd64-release (p95).'>"
+    category: performance           # performance | security | reliability |
+                                    # compatibility | usability | observability | other
+    derived: false
+    threshold: "<measurable threshold or N/A>"
+    notes: ~
+
+# ---------- Gaps & ambiguities ---------------------------------------------
+
+missing_inputs: []                 # list of { name, severity: blocker|advisory, note }
+open_questions: []                 # list of Q-n ids defined in clarifications.md
+
+# ---------- Change log ------------------------------------------------------
+
+changelog:
+  - date: YYYY-MM-DD
+    by: "skill-spec-driven-dev@0.1.0"
+    change: "initial manifest"

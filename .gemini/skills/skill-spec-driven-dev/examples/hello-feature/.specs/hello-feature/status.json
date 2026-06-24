@@ -1,0 +1,58 @@
+{
+  "feature_key": "hello-feature",
+  "workspace_path": ".specs/hello-feature",
+  "title": "Add hello(name) CLI command",
+  "stage": "implement-done",
+  "stages": {
+    "init":      { "done": true, "at": "2026-05-06T13:30:00Z" },
+    "design":    { "done": true, "at": "2026-05-06T13:45:00Z",
+                   "gates": { "lld_complete": true,
+                              "acceptance_covers_all_reqs": true,
+                              "plan_ordered_and_sized": true,
+                              "risks_registered": true } },
+    "tests":     { "done": true, "at": "2026-05-06T13:55:00Z",
+                   "gates": { "red_state_confirmed": true,
+                              "red_state_notes": "6 new tests red; pre-existing suite green." } },
+    "implement": { "done": true, "at": "2026-05-06T14:35:00Z",
+                   "gates": { "green_state_confirmed": true } },
+    "lint":      { "done": false, "at": null, "pass": false,
+                   "errors": 0, "warnings": 0, "infos": 0, "report": null }
+  },
+  "counters": { "REQ": 2, "NFR": 1, "AC": 6, "LLD": 2,
+                "TASK": 4, "TC": 6, "RISK": 1, "Q": 1 },
+  "open_clarifications": 1,
+  "open_risks": 0,
+  "toolchain": {
+    "build_system": "npm",
+    "test_framework": "vitest",
+    "build_command": "npm run build",
+    "test_command": "npm test",
+    "targets": ["node20"],
+    "languages": ["typescript"]
+  },
+  "host_integrations": {
+    "knowledge_base": null,
+    "formal_docs_root": null,
+    "ticketing_mcp": null,
+    "agent_rules_files": ["AGENTS.md"]
+  },
+  "artifacts": [
+    { "path": "00-inputs/inputs.yaml",          "generator": "skill-spec-driven-dev@0.1.0" },
+    { "path": "00-inputs/pm-requirements.md",   "generator": "skill-spec-driven-dev@0.1.0" },
+    { "path": "00-inputs/context-manifest.md",  "generator": "skill-spec-driven-dev@0.1.0" },
+    { "path": "01-design/lld.md",               "generator": "skill-spec-driven-dev@0.1.0" },
+    { "path": "01-design/acceptance.md",        "generator": "skill-spec-driven-dev@0.1.0" },
+    { "path": "01-design/plan.md",              "generator": "skill-spec-driven-dev@0.1.0" },
+    { "path": "01-design/risks.md",             "generator": "skill-spec-driven-dev@0.1.0" },
+    { "path": "02-tests/tests.md",              "generator": "skill-spec-driven-dev@0.1.0" },
+    { "path": "02-tests/test-matrix.csv",       "generator": "skill-spec-driven-dev@0.1.0" },
+    { "path": "03-impl/impl-log.md",            "generator": "skill-spec-driven-dev@0.1.0" },
+    { "path": "03-impl/verify-report.md",       "generator": "skill-spec-driven-dev@0.1.0" },
+    { "path": "traceability.md",                "generator": "skill-spec-driven-dev@0.1.0" },
+    { "path": "clarifications.md",              "generator": "skill-spec-driven-dev@0.1.0" },
+    { "path": "status.json",                    "generator": "skill-spec-driven-dev@0.1.0" },
+    { "path": "README.md",                      "generator": "skill-spec-driven-dev@0.1.0" }
+  ],
+  "generator": "skill-spec-driven-dev@0.1.0",
+  "generated_at": "2026-05-06T14:35:00Z"
+}

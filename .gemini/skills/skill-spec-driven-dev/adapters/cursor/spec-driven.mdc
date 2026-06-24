@@ -1,0 +1,26 @@
+---
+description: Spec-driven development skill for Cursor. Use when the user asks to design, spec, test, or implement a feature.
+globs:
+  - "**/*"
+alwaysApply: false
+---
+
+# Spec-Driven Development (Cursor rule)
+
+This repo uses the `skill-spec-driven-dev` agent skill.
+
+- Skill root: `<SKILL_PATH>`
+- Entry point: `<SKILL_PATH>/SKILL.md`
+- Always-on rules: `<SKILL_PATH>/rules-core.md`
+
+When the user asks to design, spec, create tests for, or implement a feature:
+
+1. Read `<SKILL_PATH>/SKILL.md` and `<SKILL_PATH>/rules-core.md`.
+2. Pick the right capability from `<SKILL_PATH>/capabilities/` (`init`,
+   `design`, `tests`, `implement`, `lint`, or `pipeline`) based on the user's
+   intent and the feature's `status.json`.
+3. Follow the capability file exactly. Never advance `stage` unless gates pass.
+4. Never auto-commit.
+
+Feature workspaces default to `.specs/<FEATURE_KEY>/` (prompt the user for
+the Jira ticket id and the workspace path during `init`).
